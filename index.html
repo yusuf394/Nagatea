@@ -34,67 +34,6 @@ body{font-family:'Inter',sans-serif;color:var(--txt);background:#fff;overflow-x:
 .reveal-s.visible{opacity:1;transform:scale(1)}
 .d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}.d5{transition-delay:.4s}
 
-/* tablet */
-@media (max-width:768px){
-    html {
-        font-size: 80%;
-    }
-    #hamburger-menu{
-        display: inline-block;
-    }
-    .navbar .navbar-nav {
-        position: absolute;  
-        top: 100%;
-        right: -100%;
-        width: 30rem;
-        height: 100vh;
-        transition: 0.3s;
-        background-color: #fff;
-        }
-        .navbar .navbar-nav.active {
-            right: 0;
-        }
-
-    
-    .navbar .navbar-nav a{
-        color: var(--bg);
-        display: block;
-        margin: 1.5rem;
-        padding: 0.5rem;
-        font-size: 2rem;
-    }
-}
-.navbar .navbar-nav a::after{
-    transform-origin: 0 0;
-}
-.navbar .navbar-nav a:hover:after{
-    transform: scaleX(0.2);
-}
-
-.about .row{
-        flex-wrap: wrap;
-    }
-
-.about .row .about-img img{
-        height: 24rem;
-        object-fit: cover;
-        object-position: center;
-    }
-
-    .about .row .about-content{
-        padding: 0;
-    }
-
-    .about .row .about-content h3{
-        margin-top: 1rem;
-        font-size: 1.2rem;
-    }
-/*phone */
-@media (max-width:459px){html
- html {
-    font-size: 55%;
- }
-}
 
 
 
@@ -128,6 +67,8 @@ nav{background:rgba(26,58,42,.97);backdrop-filter:blur(14px);display:flex;align-
 .nav-btn-cta{background:var(--pink) !important;color:#fff !important;border-radius:6px;padding:8px 20px;transition:background .25s,transform .15s !important}
 .nav-btn-cta::after{display:none !important}
 .nav-btn-cta:hover{background:var(--pink2) !important;transform:translateY(-1px)}
+
+  
 
 /* PAGES */
 .page{display:none;animation:slideInPage .45s cubic-bezier(.22,1,.36,1) both}
@@ -347,6 +288,22 @@ textarea.form-input{resize:vertical;min-height:100px}
   </div>
 </nav>
 
+  <nav id="navbar">
+  <div class="logo" onclick="showPage('home')">Nage<span>tea</span></div>
+  
+  <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+    ☰
+  </button>
+
+  <div class="nav-links" id="navLinks">
+    <button class="nav-btn active" id="nb-home" onclick="showPage('home')">Beranda</button>
+    <button class="nav-btn" id="nb-produk" onclick="showPage('produk')">Produk</button>
+    <button class="nav-btn" id="nb-profil" onclick="showPage('profil')">Company Profile</button>
+    <button class="nav-btn" id="nb-testi" onclick="showPage('testi')">Testimoni</button>
+    <button class="nav-btn nav-btn-cta" onclick="showPage('testi');setTimeout(()=>document.getElementById('form-sec').scrollIntoView({behavior:'smooth'}),300)">Tulis Ulasan</button>
+  </div>
+</nav>
+
 <!-- ===================== HOME PAGE ===================== -->
 <div class="page active" id="page-home">
   <section class="hero">
@@ -425,6 +382,7 @@ textarea.form-input{resize:vertical;min-height:100px}
   </section>
   <footer class="site-footer"><div class="logo" style="font-size:18px" onclick="showPage('home')">Nage<span>tea</span></div><p>© 2024 Nagatea</p></footer>
 </div>
+ 
 
 <!-- ===================== PRODUK PAGE ===================== -->
 <div class="page" id="page-produk">
@@ -850,6 +808,103 @@ initReveal();
   window.addEventListener('scroll', triggerReveal);
   // Jalankan sekali saat website pertama dimuat
   window.addEventListener('load', triggerReveal);
+  /* ===================== RESPONSIVE (HP & TABLET) ===================== */
+.mobile-menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  /* Tablet */
+  .hero h1, .page-hero h1, .cp-hero h1, .testi-hero h1 { font-size: 40px; }
+  .stats-bar, .rating-bar { grid-template-columns: 1fr; }
+  .stat-i, .rb-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.2); }
+  .info-strip { grid-template-columns: repeat(2, 1fr); }
+  .info-item { border-bottom: 1px solid var(--brd); }
+}
+
+@media (max-width: 768px) {
+  /* Mobile / Layar HP */
+  nav { padding: 0 24px; }
+  .mobile-menu-btn { display: block; }
+  
+  /* Styling Menu Dropdown Mobile */
+  .nav-links {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: rgba(26,58,42,.98);
+    backdrop-filter: blur(14px);
+    flex-direction: column;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+    transform: translateY(-150%);
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    z-index: -1;
+  }
+  
+  .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+    z-index: 199;
+  }
+
+  .nav-btn { width: 100%; padding: 12px 24px; text-align: left; }
+  .nav-btn::after { display: none; }
+  .nav-btn-cta { margin: 10px 24px; width: auto; text-align: center; }
+
+  /* Menjadikan Grid 1 Kolom */
+  .prod-grid, .keunggulan-grid, .about-grid, .visi-misi, .testi-grid, .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Penyesuaian Padding & Font untuk HP */
+  .hero, .sec, .page-hero, .cp-hero, .testi-hero, .form-sec { padding: 60px 24px; }
+  .hero h1 { font-size: 36px; }
+  .hero-btns { flex-direction: column; width: 100%; }
+  .btn-p, .btn-s { width: 100%; justify-content: center; }
+  .hbc { display: none; } /* Sembunyikan lingkaran dekorasi di HP agar tidak berat */
+}
+  // 5. Interaktivitas Mobile Menu (Hamburger)
+  const mobileBtn = document.getElementById('mobileMenuBtn');
+  const navLinks = document.getElementById('navLinks');
+
+  mobileBtn.addEventListener('click', () => {
+    // Toggle class 'active' untuk memunculkan/menyembunyikan menu
+    navLinks.classList.toggle('active');
+    
+    // Ubah icon hamburger jadi 'X' saat dibuka
+    if(navLinks.classList.contains('active')) {
+      mobileBtn.innerHTML = '✕';
+    } else {
+      mobileBtn.innerHTML = '☰';
+    }
+  });
+
+  // Tutup menu mobile secara otomatis saat salah satu tombol link diklik
+  const navButtons = document.querySelectorAll('.nav-btn');
+  navButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        navLinks.classList.remove('active');
+        mobileBtn.innerHTML = '☰';
+      }
+    });
+  });
+
+  // Memastikan menu reset saat orientasi layar diputar (HP ke Lanskap/Tablet)
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      navLinks.classList.remove('active');
+      mobileBtn.innerHTML = '☰';
+    }
+  });
 
 
 </script>

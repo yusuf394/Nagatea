@@ -1,349 +1,1334 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nagatea — Teh Herbal Kulit Buah Naga</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-/* ===================== BASE STYLES ===================== */
-*{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --dark:#1A3A2A; --dark2:#122819;
-  --pink:#C94B7B; --pink2:#a83864;
-  --gold:#C8A96E; --gold2:#a88a50;
-  --txt:#1a1a1a;  --txt2:#6b7280;
-  --brd:#e5e7eb;  --bg2:#f9fafb;
-}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;color:var(--txt);background:#fff;overflow-x:hidden}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nagatea — Teh Kulit Buah Naga Premium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream:      #F4EEE4;
+            --green:      #1A3A2A;
+            --green-soft: #2C4E38;
+            --rose:       #C2426E;
+            --rose-dark:  #9E3459;
+            --gold:       #B8965A;
+            --muted:      #6B7A70;
+            --line:       rgba(26,58,42,0.1);
+            --white:      #ffffff;
+            --font:       'Plus Jakarta Sans', sans-serif;
+            --nav-h:      68px;
+        }
 
-/* ===================== ANIMATIONS ===================== */
-@keyframes fadeUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-@keyframes pulseDot{0%,100%{transform:scale(1)}50%{transform:scale(1.5)}}
-@keyframes rotateSlow{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-@keyframes slideInPage{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
-@keyframes starPop{0%{transform:scale(0)}60%{transform:scale(1.2)}100%{transform:scale(1)}}
+        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior: smooth; }
 
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
-.reveal-l{opacity:0;transform:translateX(-28px);transition:opacity .65s ease,transform .65s ease}
-.reveal-l.visible{opacity:1;transform:translateX(0)}
-.reveal-r{opacity:0;transform:translateX(28px);transition:opacity .65s ease,transform .65s ease}
-.reveal-r.visible{opacity:1;transform:translateX(0)}
-.reveal-s{opacity:0;transform:scale(.93);transition:opacity .55s ease,transform .55s ease}
-.reveal-s.visible{opacity:1;transform:scale(1)}
-.d1{transition-delay:.08s} .d2{transition-delay:.16s} .d3{transition-delay:.24s}
+        body {
+            font-family: var(--font);
+            background: var(--cream);
+            color: var(--green);
+            line-height: 1.65;
+            overflow-x: hidden;
+        }
 
-/* ===================== UI ELEMENTS ===================== */
-.pgbar{position:fixed;top:0;left:0;height:2px;background:var(--pink);z-index:9999;transition:width .1s}
-.cglow{position:fixed;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(201,75,123,.07) 0%,transparent 70%);pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:left .08s,top .08s}
-.btt{position:fixed;bottom:28px;right:28px;width:42px;height:42px;border-radius:50%;background:var(--pink);color:#fff;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:17px;opacity:0;transform:translateY(10px);transition:opacity .3s,transform .3s,background .2s;z-index:100}
-.btt.show{opacity:1;transform:translateY(0)}
-.btt:hover{background:var(--pink2)}
+        img { display:block; max-width:100%; }
+        a { color: inherit; }
 
-/* ===================== NAVBAR ===================== */
-nav{background:rgba(26,58,42,.97);backdrop-filter:blur(14px);display:flex;align-items:center;justify-content:space-between;padding:0 52px;height:64px;position:sticky;top:0;z-index:200;border-bottom:1px solid rgba(255,255,255,.06);transition:all .3s}
-.logo{font-family:'Playfair Display',serif;color:#fff;font-size:22px;font-weight:700;letter-spacing:1.5px;text-decoration:none;cursor:pointer}
-.logo span{color:var(--pink)}
-.nav-links{display:flex;gap:4px;align-items:center}
-.nav-btn{background:transparent;border:none;cursor:pointer;color:rgba(255,255,255,.65);font-size:12px;font-family:'Inter',sans-serif;letter-spacing:1px;text-transform:uppercase;padding:8px 16px;border-radius:6px;position:relative;transition:all .25s;}
-.nav-btn::after{content:'';position:absolute;bottom:4px;left:16px;right:16px;height:1px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s}
-.nav-btn:hover{color:var(--gold)}
-.nav-btn:hover::after{transform:scaleX(1)}
-.nav-btn.active{color:#fff;background:rgba(255,255,255,.08)}
-.nav-btn.active::after{transform:scaleX(1)}
-.nav-btn-cta{background:var(--pink) !important;color:#fff !important;border-radius:6px;padding:8px 20px;}
-.nav-btn-cta:hover{background:var(--pink2) !important;transform:translateY(-1px)}
+        /* ── UTILITY ── */
+        .container { max-width: 1080px; margin: 0 auto; padding: 0 5%; }
+        .label {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--rose);
+            margin-bottom: 0.75rem;
+        }
+        .heading {
+            font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--green);
+        }
+        .heading-lg {
+            font-size: clamp(2.4rem, 5vw, 3.8rem);
+            font-weight: 700;
+            line-height: 1.1;
+        }
 
-/* HAMBURGER MENU (Hidden by default for Laptop/Tablet) */
-.mobile-menu-btn {
-  display: none;
-  background: transparent;
-  border: none;
-  color: #fff;
-  font-size: 26px;
-  cursor: pointer;
-}
+        /* ── NAVBAR ── */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: var(--nav-h);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5%;
+            background: rgba(244,238,228,0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--line);
+            z-index: 900;
+            transition: box-shadow 0.3s;
+        }
+        nav.scrolled { box-shadow: 0 1px 16px rgba(0,0,0,0.07); }
 
-/* ===================== RESPONSIVE DESIGN ===================== */
-@media (max-width: 992px) {
-  /* TABLET */
-  nav { padding: 0 32px; }
-  .hero h1, .page-hero h1 { font-size: 48px; }
-  .stats-bar { grid-template-columns: 1fr; }
-  .stat-i { border-right: none; border-bottom: 1px solid rgba(255,255,255,.2); }
-}
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--rose);
+            text-decoration: none;
+            letter-spacing: -0.01em;
+        }
 
-@media (max-width: 768px) {
-  /* MOBILE (HP) */
-  nav { padding: 0 20px; }
-  .mobile-menu-btn { display: block; } /* Munculkan hamburger di HP */
-  
-  .nav-links {
-    position: absolute;
-    top: 64px;
-    left: 0;
-    width: 100%;
-    background: rgba(26,58,42,.98);
-    flex-direction: column;
-    align-items: stretch;
-    padding: 20px;
-    gap: 10px;
-    border-bottom: 1px solid rgba(255,255,255,.1);
-    transform: translateY(-150%);
-    opacity: 0;
-    transition: all 0.3s ease-in-out;
-    z-index: -1;
-  }
-  
-  .nav-links.active {
-    transform: translateY(0);
-    opacity: 1;
-    z-index: 199;
-  }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--green);
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--rose); }
 
-  .nav-btn { text-align: left; padding: 14px 16px; width: 100%; }
-  .nav-btn::after { display: none; }
-  .nav-btn-cta { text-align: center; margin-top: 10px; }
+        .nav-btn {
+            background: var(--green);
+            color: var(--white) !important;
+            padding: 0.5rem 1.25rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+        .nav-btn:hover { background: var(--green-soft) !important; }
 
-  .hero { padding: 80px 24px 60px; min-height: 70vh; }
-  .hero h1 { font-size: 38px; }
-  .hbc { display: none; } /* Sembunyikan lingkaran dekorasi di HP */
-  
-  .sec, .page-hero { padding: 60px 24px; }
-  .prod-grid, .keunggulan-grid, .about-grid { grid-template-columns: 1fr; }
-  .hero-btns { flex-direction: column; width: 100%; }
-  .btn-p, .btn-s { width: 100%; justify-content: center; }
-}
+        /* ── HAMBURGER ── */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 1000;
+            padding: 4px;
+        }
+        .hamburger span {
+            display: block;
+            width: 22px; height: 2px;
+            background: var(--green);
+            border-radius: 2px;
+            transition: transform 0.3s, opacity 0.3s;
+            transform-origin: center;
+        }
+        .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .hamburger.open span:nth-child(2) { opacity: 0; }
+        .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* ===================== LAYOUTS ===================== */
-.page{display:none;animation:slideInPage .45s ease both}
-.page.active{display:block}
-.hero{background:var(--dark);min-height:90vh;display:flex;flex-direction:column;justify-content:center;padding:100px 52px 80px;position:relative;overflow:hidden}
-.hbc{position:absolute;border-radius:50%;animation:rotateSlow 30s linear infinite}
-.hbc1{width:580px;height:580px;right:-160px;top:-100px;border:1px solid rgba(201,75,123,.12)}
-.hero-tag{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:22px;animation:fadeUp .8s ease both}
-.hero h1{font-family:'Playfair Display',serif;font-size:60px;font-weight:700;color:#fff;line-height:1.1;margin-bottom:26px;animation:fadeUp .9s .1s ease both}
-.hero h1 em{color:var(--pink);font-style:italic}
-.hero-sub{color:rgba(255,255,255,.58);font-size:16px;line-height:1.8;max-width:480px;margin-bottom:44px;animation:fadeUp 1s .2s ease both}
-.hero-btns{display:flex;gap:14px;animation:fadeUp 1s .3s ease both}
-.btn-p{display:inline-flex;align-items:center;gap:9px;background:var(--pink);color:#fff;padding:13px 30px;font-size:14px;font-weight:500;border-radius:6px;text-decoration:none;border:none;cursor:pointer;transition:all .25s}
-.btn-p:hover{background:var(--pink2);transform:translateY(-2px);}
-.btn-s{display:inline-flex;align-items:center;gap:9px;background:transparent;color:rgba(255,255,255,.72);padding:13px 30px;font-size:14px;border-radius:6px;text-decoration:none;border:1px solid rgba(255,255,255,.2);cursor:pointer;transition:all .25s}
-.btn-s:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+        /* ── MOBILE MENU ── */
+        .mobile-menu {
+            position: fixed;
+            inset: 0;
+            background: var(--cream);
+            z-index: 899;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        .mobile-menu.open { opacity: 1; pointer-events: all; }
 
-.stats-bar{background:var(--gold);display:grid;grid-template-columns:repeat(3,1fr)}
-.stat-i{padding:22px 20px;text-align:center;border-right:1px solid rgba(255,255,255,.3);}
-.stat-i:last-child{border-right:none}
-.stat-n{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:var(--dark);}
-.stat-l{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(26,58,42,.6);margin-top:4px}
+        .mobile-menu a {
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--green);
+            transition: color 0.2s;
+        }
+        .mobile-menu a:hover { color: var(--rose); }
+        .mobile-menu .m-btn {
+            background: var(--green);
+            color: var(--white) !important;
+            padding: 0.75rem 2.5rem;
+            border-radius: 6px;
+            margin-top: 0.5rem;
+            font-size: 1rem !important;
+        }
 
-.sec{padding:80px 52px}
-.sec-alt{background:var(--bg2)}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--pink);margin-bottom:12px}
-.ew-line{width:22px;height:1px;background:currentColor}
-.sec h2{font-family:'Playfair Display',serif;font-size:34px;font-weight:700;line-height:1.2;margin-bottom:16px}
-.lead{font-size:15px;line-height:1.85;color:var(--txt2);max-width:620px}
+        /* ── HERO ── */
+        .hero {
+            min-height: 100vh;
+            background: var(--green);
+            display: flex;
+            align-items: center;
+            padding: calc(var(--nav-h) + 5rem) 5% 5rem;
+        }
 
-/* PROD CARDS */
-.page-hero{background:var(--dark);padding:72px 52px 60px;}
-.page-hero-tag{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
-.page-hero h1{font-family:'Playfair Display',serif;font-size:44px;font-weight:700;color:#fff;line-height:1.15;margin-bottom:16px}
-.page-hero p{color:rgba(255,255,255,.6);font-size:15px;line-height:1.8;max-width:520px}
-.prod-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:40px}
-.prod-card{background:#fff;border:1px solid var(--brd);border-radius:16px;padding:28px;transition:all .3s;}
-.prod-card:hover{transform:translateY(-6px);border-color:var(--pink);box-shadow:0 20px 48px rgba(201,75,123,.12)}
-.prod-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;margin-bottom:9px;margin-top:10px;}
-.prod-desc{font-size:13px;color:var(--txt2);line-height:1.7;margin-bottom:16px}
+        .hero-inner {
+            max-width: 680px;
+        }
 
-.keunggulan-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:36px}
-.keung-card{background:#fff;border:1px solid var(--brd);border-radius:14px;padding:24px;}
-.keung-num{font-family:'Playfair Display',serif;font-size:32px;font-weight:700;color:rgba(201,75,123,.18);margin-bottom:8px;line-height:1}
-.keung-title{font-size:14px;font-weight:600;color:var(--txt);margin-bottom:8px}
-.keung-desc{font-size:13px;color:var(--txt2);line-height:1.7}
+        .hero-label {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 1.2rem;
+        }
 
-.site-footer{background:#0d1f15;padding:32px 52px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,.06)}
-.site-footer p{font-size:12px;color:rgba(255,255,255,.28)}
-</style>
+        .hero h1 {
+            font-size: clamp(2.6rem, 6vw, 4.2rem);
+            font-weight: 700;
+            line-height: 1.08;
+            color: var(--white);
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 span { color: var(--rose); }
+
+        .hero p {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.6);
+            max-width: 480px;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            line-height: 1.75;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.75rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.2s, border-color 0.2s;
+        }
+        .btn:hover { transform: translateY(-2px); }
+
+        .btn-rose { background: var(--rose); color: var(--white); }
+        .btn-rose:hover { background: var(--rose-dark); }
+
+        .btn-ghost {
+            background: transparent;
+            color: rgba(255,255,255,0.8);
+            border: 1.5px solid rgba(255,255,255,0.25);
+        }
+        .btn-ghost:hover { border-color: rgba(255,255,255,0.6); color: var(--white); }
+
+        .hero-divider {
+            display: flex;
+            gap: 3rem;
+            margin-top: 4.5rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            flex-wrap: wrap;
+        }
+        .hero-stat .n {
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+        }
+        .hero-stat .t {
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.4);
+            letter-spacing: 0.08em;
+            margin-top: 0.3rem;
+        }
+
+        /* ── SECTION ── */
+        section { padding: 6rem 5%; }
+
+        /* ── STORY ── */
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .story-box {
+            background: var(--green);
+            border-radius: 12px;
+            padding: 2.5rem;
+            color: var(--white);
+        }
+
+        .story-box .quote {
+            font-size: 1.3rem;
+            font-weight: 600;
+            line-height: 1.5;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .story-box .sub {
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.7;
+            font-weight: 300;
+        }
+
+        .story-text .heading { margin-bottom: 1rem; }
+        .story-text p {
+            font-size: 0.95rem;
+            color: var(--muted);
+            margin-top: 0.85rem;
+            line-height: 1.8;
+        }
+
+        /* ── BENEFITS ── */
+        .benefits-section {
+            background: var(--green);
+        }
+
+        .benefits-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+        .benefits-header .label { color: var(--gold); }
+        .benefits-header .heading { color: var(--white); }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+        }
+
+        .b-card {
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 10px;
+            padding: 2rem;
+            transition: border-color 0.25s, transform 0.25s;
+        }
+        .b-card:hover {
+            border-color: rgba(184,150,90,0.4);
+            transform: translateY(-3px);
+        }
+
+        .b-card h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 0.6rem;
+        }
+        .b-card p {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.75;
+            font-weight: 300;
+        }
+
+        /* ── HOW TO BREW ── */
+        .brew-section { text-align: center; }
+        .brew-header { margin-bottom: 3.5rem; }
+
+        .brew-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        .brew-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .step-num {
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            border: 1.5px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--green);
+            background: var(--cream);
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .brew-step:hover .step-num {
+            background: var(--gold);
+            color: var(--white);
+        }
+
+        .brew-step h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--green);
+        }
+        .brew-step p {
+            font-size: 0.8rem;
+            color: var(--muted);
+            text-align: center;
+            line-height: 1.65;
+        }
+
+        /* ── PRODUCT ── */
+        .product-section { background: var(--cream); }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 4.5rem;
+            align-items: center;
+        }
+
+        .product-img-box {
+            background: var(--green);
+            border-radius: 12px;
+            aspect-ratio: 4/5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .product-img-box .prod-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--gold);
+            letter-spacing: 0.05em;
+        }
+
+        .product-img-box .prod-sub {
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.35);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .tea-glyph {
+            width: 80px; height: 80px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(184,150,90,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tea-glyph svg { opacity: 0.6; }
+
+        .product-info .heading { margin-bottom: 0.5rem; }
+
+        .prod-tagline {
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-bottom: 2rem;
+        }
+
+        .prod-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        .prod-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            font-size: 0.875rem;
+            padding: 0.55rem 0;
+            border-bottom: 1px solid var(--line);
+            color: var(--green);
+        }
+        .prod-list .tick {
+            width: 18px; height: 18px;
+            border-radius: 50%;
+            background: var(--rose);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .prod-list .tick svg { display: block; }
+
+        .price-row {
+            background: var(--green);
+            border-radius: 10px;
+            padding: 1.25rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+        }
+        .price-meta .pl { font-size: 0.7rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 0.1em; }
+        .price-meta .ps { font-size: 0.75rem; color: rgba(255,255,255,0.3); margin-top: 2px; }
+        .price-num {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: -0.02em;
+        }
+
+        .prod-actions { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
+        .btn-wa {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #25D366;
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.875rem;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .btn-wa:hover { background: #1fba58; transform: translateY(-2px); }
+
+        .btn-outline-green {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 1.5px solid var(--green);
+            color: var(--green);
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.875rem;
+            background: transparent;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .btn-outline-green:hover { background: rgba(26,58,42,0.06); transform: translateY(-2px); }
+
+        /* ── ORDER FORM ── */
+        .order-section { background: var(--green); }
+
+        .order-section .label { color: var(--gold); }
+        .order-section .heading { color: var(--white); margin-bottom: 0.5rem; }
+        .order-section .sub {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 2.5rem;
+        }
+
+        .order-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .order-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+        .field label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: rgba(255,255,255,0.5);
+            letter-spacing: 0.05em;
+        }
+        .field input,
+        .field select,
+        .field textarea {
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.12);
+            border-radius: 7px;
+            padding: 0.7rem 0.95rem;
+            font-family: var(--font);
+            font-size: 0.875rem;
+            color: var(--white);
+            outline: none;
+            transition: border-color 0.2s;
+            resize: none;
+        }
+        .field input::placeholder,
+        .field textarea::placeholder { color: rgba(255,255,255,0.25); }
+        .field input:focus,
+        .field select:focus,
+        .field textarea:focus {
+            border-color: var(--gold);
+        }
+        .field select option { background: var(--green); color: var(--white); }
+
+        .order-submit {
+            width: 100%;
+            padding: 0.85rem;
+            background: var(--rose);
+            color: var(--white);
+            border: none;
+            border-radius: 7px;
+            font-family: var(--font);
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+            letter-spacing: 0.02em;
+        }
+        .order-submit:hover { background: var(--rose-dark); transform: translateY(-1px); }
+
+        .order-note {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.3);
+            text-align: center;
+            margin-top: 0.25rem;
+        }
+
+        /* Order Info Side */
+        .order-info { color: rgba(255,255,255,0.65); }
+
+        .order-info h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .order-steps-list { list-style: none; margin-bottom: 2rem; }
+        .order-steps-list li {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            font-size: 0.875rem;
+            line-height: 1.7;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+        .os-num {
+            width: 24px; height: 24px;
+            border-radius: 50%;
+            border: 1px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--gold);
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .order-info .note-box {
+            background: rgba(184,150,90,0.08);
+            border: 1px solid rgba(184,150,90,0.2);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.45);
+            line-height: 1.7;
+        }
+
+        /* ── TESTIMONIALS ── */
+        .testi-header { text-align: center; margin-bottom: 3rem; }
+
+        .testi-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.25rem;
+        }
+
+        .t-card {
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            padding: 1.75rem;
+            transition: box-shadow 0.25s, transform 0.25s;
+        }
+        .t-card:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.06); transform: translateY(-3px); }
+
+        .t-stars {
+            font-size: 0.8rem;
+            color: var(--gold);
+            letter-spacing: 2px;
+            margin-bottom: 0.85rem;
+        }
+        .t-card p {
+            font-size: 0.875rem;
+            color: var(--muted);
+            line-height: 1.75;
+            margin-bottom: 1rem;
+        }
+        .t-author {
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--green);
+        }
+
+        /* ── FAQ ── */
+        .faq-wrap { max-width: 680px; margin: 0 auto; }
+        .faq-header { text-align: center; margin-bottom: 3rem; }
+
+        .faq-item { border-bottom: 1px solid var(--line); }
+
+        .faq-q {
+            width: 100%;
+            background: none;
+            border: none;
+            text-align: left;
+            padding: 1.1rem 0;
+            font-family: var(--font);
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--green);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            transition: color 0.2s;
+        }
+        .faq-q:hover { color: var(--rose); }
+        .faq-icon {
+            color: var(--rose);
+            font-size: 1.1rem;
+            font-weight: 400;
+            flex-shrink: 0;
+            transition: transform 0.3s;
+            line-height: 1;
+        }
+        .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+        .faq-a {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+        }
+        .faq-a-inner {
+            padding-bottom: 1.1rem;
+            font-size: 0.875rem;
+            color: var(--muted);
+            line-height: 1.8;
+        }
+        .faq-item.open .faq-a { max-height: 200px; }
+
+        /* ── CTA SECTION ── */
+        .cta-section {
+            background: var(--green);
+            text-align: center;
+        }
+        .cta-section .heading { color: var(--white); margin-bottom: 0.75rem; }
+        .cta-section p {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.5);
+            max-width: 440px;
+            margin: 0 auto 2rem;
+            line-height: 1.75;
+        }
+        .cta-btns { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+
+        .btn-cream {
+            background: var(--cream);
+            color: var(--green);
+            padding: 0.75rem 1.75rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .btn-cream:hover { background: var(--gold); color: var(--white); transform: translateY(-2px); }
+
+        /* ── FOOTER ── */
+        footer {
+            background: #0e1d14;
+            padding: 3rem 5% 1.75rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            margin-bottom: 1.5rem;
+        }
+        .f-brand .logo { color: var(--rose); font-size: 1.3rem; }
+        .f-brand p { font-size: 0.82rem; color: rgba(255,255,255,0.3); margin-top: 0.5rem; line-height: 1.7; max-width: 200px; }
+        .f-col h4 { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+        .f-col ul { list-style: none; }
+        .f-col li { margin-bottom: 0.55rem; }
+        .f-col a { text-decoration: none; font-size: 0.82rem; color: rgba(255,255,255,0.35); transition: color 0.2s; }
+        .f-col a:hover { color: rgba(255,255,255,0.75); }
+        .footer-bottom { text-align: center; font-size: 0.75rem; color: rgba(255,255,255,0.2); }
+
+        /* ── SCROLL REVEAL ── */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .reveal.visible { opacity: 1; transform: none; }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 900px) {
+            .benefits-grid,
+            .testi-grid { grid-template-columns: repeat(2, 1fr); }
+            .story-grid,
+            .product-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .order-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 640px) {
+            .nav-links { display: none; }
+            .hamburger { display: flex; }
+
+            section { padding: 4rem 5%; }
+
+            .hero { padding: calc(var(--nav-h) + 3.5rem) 5% 4rem; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero-divider { gap: 2rem; }
+
+            .benefits-grid,
+            .testi-grid { grid-template-columns: 1fr; }
+
+            .brew-steps { grid-template-columns: repeat(2, 1fr); }
+
+            .form-row { grid-template-columns: 1fr; }
+
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+
+            .cta-btns { flex-direction: column; align-items: center; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, .reveal { transition: none !important; }
+        }
+    </style>
 </head>
 <body>
 
-<div class="pgbar" id="pgbar"></div>
-<div class="cglow" id="cglow"></div>
-<button class="btt" id="btt" onclick="scrollTo({top:0,behavior:'smooth'})" aria-label="Ke atas">↑</button>
-
+<!-- ── NAVBAR ── -->
 <nav id="navbar">
-  <div class="logo" onclick="showPage('home')">Nage<span>tea</span></div>
-  
-  <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">☰</button>
-
-  <div class="nav-links" id="navLinks">
-    <button class="nav-btn active" id="nb-home" onclick="showPage('home')">Beranda</button>
-    <button class="nav-btn" id="nb-produk" onclick="showPage('produk')">Produk</button>
-    <button class="nav-btn nav-btn-cta" onclick="showPage('produk')">Pesan Sekarang</button>
-  </div>
+    <a class="logo" href="#">Nagatea</a>
+    <ul class="nav-links">
+        <li><a href="#story">Tentang</a></li>
+        <li><a href="#benefits">Manfaat</a></li>
+        <li><a href="#brew">Cara Seduh</a></li>
+        <li><a href="#product">Produk</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#order" class="nav-btn">Pesan Sekarang</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Buka menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+    </button>
 </nav>
 
-<div class="page active" id="page-home">
-  <section class="hero">
-    <div class="hbc hbc1"></div>
-    <div class="hero-tag">Inovasi Teh Herbal Indonesia</div>
-    <h1>Kesehatan dari<br><em>Kulit Buah Naga</em></h1>
-    <p class="hero-sub">Nagatea hadir sebagai solusi minuman fungsional berbasis limbah kulit buah naga yang kaya antioksidan, dipadukan dengan cengkeh dan kayu manis untuk cita rasa khas dan manfaat nyata.</p>
-    <div class="hero-btns">
-      <button class="btn-p" onclick="showPage('produk')">Kenali Produk Kami →</button>
-      <button class="btn-s" onclick="showPage('produk')">Cara Pesan</button>
-    </div>
-  </section>
-
-  <div class="stats-bar">
-    <div class="stat-i"><div class="stat-n">Zero Waste</div><div class="stat-l">Konsep Produksi</div></div>
-    <div class="stat-i"><div class="stat-n">100% Alami</div><div class="stat-l">Tanpa Pengawet</div></div>
-    <div class="stat-i"><div class="stat-n">Healthy Lifestyle</div><div class="stat-l">Nilai Utama Produk</div></div>
-  </div>
-
-  <section class="sec">
-    <p class="eyebrow reveal"><span class="ew-line"></span>Mengapa Nagatea?</p>
-    <h2 class="reveal d1">Teh herbal dari limbah yang bernilai tinggi</h2>
-    <p class="lead reveal d2">Kulit buah naga mengandung betasianin — antioksidan yang bahkan lebih tinggi dari daging buahnya. Nagatea mengolahnya menjadi produk minuman fungsional yang lezat, alami, dan berkelanjutan.</p>
-  </section>
-  
-  <footer class="site-footer"><div class="logo" style="font-size:18px">Nage<span>tea</span></div><p>© 2026 Nagatea</p></footer>
+<!-- ── MOBILE MENU ── -->
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-label="Navigasi">
+    <a href="#story"    class="m-link">Tentang</a>
+    <a href="#benefits" class="m-link">Manfaat</a>
+    <a href="#brew"     class="m-link">Cara Seduh</a>
+    <a href="#product"  class="m-link">Produk</a>
+    <a href="#faq"      class="m-link">FAQ</a>
+    <a href="#order"    class="m-link m-btn">Pesan Sekarang</a>
 </div>
 
-<div class="page" id="page-produk">
-  <div class="page-hero">
-    <p class="page-hero-tag">Produk Kami</p>
-    <h1>Teh Herbal <em>Premium</em><br>Berbasis Kulit Buah Naga</h1>
-    <p>Diformulasikan dari bahan alami pilihan tanpa pengawet, menghadirkan cita rasa khas dan manfaat antioksidan tinggi dalam setiap tegukan.</p>
-  </div>
-
-  <section class="sec">
-    <p class="eyebrow reveal"><span class="ew-line"></span>Varian Produk</p>
-    <h2 class="reveal d1">Pilihan Nagatea</h2>
-    <p class="lead reveal d2">Setiap kemasan berisi 10 kantung teh yang siap diseduh kapan saja dan di mana saja.</p>
-    
-    <div class="prod-grid">
-      <div class="prod-card reveal-s d1">
-        <div class="prod-name">Nagatea Original</div>
-        <div class="prod-desc">Perpaduan kulit buah naga merah, cengkeh, dan kayu manis. Rasa hangat dan sedikit pedas yang menjadi identitas khas Nagatea.</div>
-      </div>
-      <div class="prod-card reveal-s d2">
-        <div class="prod-name">Kemasan Praktis</div>
-        <div class="prod-desc">Kotak berisi 10 kantung teh siap seduh. Praktis dan higienis, cocok untuk kebutuhan harian maupun sebagai hadiah istimewa.</div>
-      </div>
+<!-- ── HERO ── -->
+<section class="hero" id="home">
+    <div class="hero-inner">
+        <span class="hero-label">Premium Dragon Fruit Tea</span>
+        <h1>Alami dari Dalam,<br><span>Terasa di Tiap Tegukan.</span></h1>
+        <p>Teh kantung berbahan kulit buah naga pilihan, dipadukan kayu manis dan cengkeh asli. Tanpa pengawet. Tanpa pewarna buatan.</p>
+        <div class="hero-actions">
+            <a href="#order"   class="btn btn-rose">Pesan Sekarang</a>
+            <a href="#product" class="btn btn-ghost">Lihat Produk</a>
+        </div>
+        <div class="hero-divider">
+            <div class="hero-stat">
+                <span class="n">100%</span>
+                <span class="t">Bahan Alami</span>
+            </div>
+            <div class="hero-stat">
+                <span class="n">0</span>
+                <span class="t">Pengawet</span>
+            </div>
+            <div class="hero-stat">
+                <span class="n">10</span>
+                <span class="t">Kantung / Kotak</span>
+            </div>
+        </div>
     </div>
-  </section>
+</section>
 
-  <section class="sec sec-alt">
-    <p class="eyebrow reveal"><span class="ew-line"></span>Keunggulan</p>
-    <h2 class="reveal d1">Mengapa Memilih Nagatea?</h2>
-    
-    <div class="keunggulan-grid">
-      <div class="keung-card reveal-l d1">
-        <div class="keung-num">01</div>
-        <div class="keung-title">Memanfaatkan Limbah Pangan</div>
-        <div class="keung-desc">Kulit buah naga yang biasanya terbuang diolah menjadi produk bernilai tinggi, mendukung prinsip zero-waste dan keberlanjutan.</div>
-      </div>
-      <div class="keung-card reveal-r d1">
-        <div class="keung-num">02</div>
-        <div class="keung-title">Kaya Antioksidan Alami</div>
-        <div class="keung-desc">Betasianin dalam kulit buah naga adalah antioksidan kuat yang membantu menangkal radikal bebas dan menjaga daya tahan tubuh.</div>
-      </div>
-      <div class="keung-card reveal-l d2">
-        <div class="keung-num">03</div>
-        <div class="keung-title">Tanpa Bahan Pengawet</div>
-        <div class="keung-desc">100% alami — tidak menggunakan pewarna buatan, perisa sintetis, maupun pengawet kimia apapun dalam proses produksinya.</div>
-      </div>
-      <div class="keung-card reveal-r d2">
-        <div class="keung-num">04</div>
-        <div class="keung-title">Rasa Khas Nagatea</div>
-        <div class="keung-desc">Sentuhan rempah cengkeh dan kayu manis memberikan paduan rasa hangat dan aroma menenangkan yang khas.</div>
-      </div>
+<!-- ── STORY ── -->
+<section id="story">
+    <div class="container">
+        <div class="story-grid reveal">
+            <div class="story-box">
+                <div class="quote">"Dari yang dibuang, kami temukan nilai."</div>
+                <div class="sub">Kulit buah naga selama ini berakhir sebagai limbah. Nagatea mengolahnya menjadi teh premium berkualitas tinggi yang menyehatkan dan berkelanjutan.</div>
+            </div>
+            <div class="story-text">
+                <span class="label">Kisah Kami</span>
+                <h2 class="heading">Inovasi dari Bahan yang Selama Ini Terabaikan</h2>
+                <p>Nagatea lahir dari satu pertanyaan sederhana: mengapa kulit buah naga yang kaya senyawa bioaktif harus berakhir di tempat sampah?</p>
+                <p>Kami menjawabnya dengan menciptakan teh celup premium — 100% alami, tanpa bahan pengawet, tanpa pewarna buatan — perpaduan kulit buah naga kering dengan cengkeh dan kayu manis asli.</p>
+                <p>Setiap kantung Nagatea adalah pilihan sadar: untuk kesehatan diri sendiri dan keberlanjutan lingkungan.</p>
+            </div>
+        </div>
     </div>
-  </section>
-  <footer class="site-footer"><div class="logo" style="font-size:18px">Nage<span>tea</span></div><p>© 2026 Nagatea</p></footer>
-</div>
+</section>
+
+<!-- ── BENEFITS ── -->
+<section class="benefits-section" id="benefits">
+    <div class="container">
+        <div class="benefits-header reveal">
+            <span class="label">Keunggulan Produk</span>
+            <h2 class="heading">Mengapa Nagatea?</h2>
+        </div>
+        <div class="benefits-grid">
+            <div class="b-card reveal">
+                <h3>Kaya Antioksidan</h3>
+                <p>Senyawa betasianin pada kulit buah naga membantu melawan radikal bebas dan mendukung sistem imun tubuh secara alami.</p>
+            </div>
+            <div class="b-card reveal">
+                <h3>100% Alami</h3>
+                <p>Bebas pengawet dan pewarna buatan. Setiap bahan dipilih langsung dari sumber terpercaya untuk menjaga standar kualitas tertinggi.</p>
+            </div>
+            <div class="b-card reveal">
+                <h3>Mendukung Zero Waste</h3>
+                <p>Mengolah limbah kulit buah naga menjadi produk bernilai — bentuk nyata komitmen kami terhadap produksi yang bertanggung jawab.</p>
+            </div>
+            <div class="b-card reveal">
+                <h3>Anti-Inflamasi Alami</h3>
+                <p>Cengkeh dan kayu manis mengandung senyawa eugenol dan cinnamaldehyde yang mendukung kesehatan pencernaan dan sendi.</p>
+            </div>
+            <div class="b-card reveal">
+                <h3>Warna Alami yang Cantik</h3>
+                <p>Pigmen betasianin menghasilkan warna merah muda alami yang khas saat diseduh — tanpa satu tetes pewarna buatan pun.</p>
+            </div>
+            <div class="b-card reveal">
+                <h3>Cocok Panas dan Dingin</h3>
+                <p>Nikmat sebagai teh panas di pagi hari, atau dijadikan es teh yang menyegarkan untuk menemani aktivitas sepanjang hari.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── HOW TO BREW ── -->
+<section id="brew">
+    <div class="container brew-section">
+        <div class="brew-header reveal">
+            <span class="label">Panduan Menyeduh</span>
+            <h2 class="heading">Cara Menikmati Nagatea</h2>
+        </div>
+        <div class="brew-steps reveal">
+            <div class="brew-step">
+                <div class="step-num">1</div>
+                <h4>Siapkan Air</h4>
+                <p>Panaskan 200 ml air hingga sekitar 85–90&#176;C, jangan sampai mendidih penuh.</p>
+            </div>
+            <div class="brew-step">
+                <div class="step-num">2</div>
+                <h4>Celupkan Kantung</h4>
+                <p>Masukkan 1 kantung Nagatea dan biarkan meresap selama 3–5 menit.</p>
+            </div>
+            <div class="brew-step">
+                <div class="step-num">3</div>
+                <h4>Tambahkan Pemanis</h4>
+                <p>Opsional: madu atau gula aren sesuai selera untuk rasa yang lebih kaya.</p>
+            </div>
+            <div class="brew-step">
+                <div class="step-num">4</div>
+                <h4>Sajikan</h4>
+                <p>Nikmati hangat, atau tambahkan es batu untuk versi cold brew yang segar.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── PRODUCT ── -->
+<section class="product-section" id="product">
+    <div class="container">
+        <div class="product-grid">
+            <div class="product-img-box reveal">
+                <div class="tea-glyph">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#C8A96E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 8h1a4 4 0 0 1 0 8h-1"/>
+                        <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"/>
+                        <line x1="6" y1="2" x2="6" y2="4"/>
+                        <line x1="10" y1="2" x2="10" y2="4"/>
+                        <line x1="14" y1="2" x2="14" y2="4"/>
+                    </svg>
+                </div>
+                <div class="prod-title">Nagatea Premium</div>
+                <div class="prod-sub">Dragon Fruit Tea</div>
+            </div>
+            <div class="product-info reveal">
+                <span class="label">Produk Kami</span>
+                <h2 class="heading">Nagatea Premium Box</h2>
+                <p class="prod-tagline">Satu kotak eksklusif untuk pengalaman teh yang berbeda dari biasanya.</p>
+                <ul class="prod-list">
+                    <li>
+                        <span class="tick"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        10 kantung teh celup premium per kotak
+                    </li>
+                    <li>
+                        <span class="tick"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        Bahan 100% alami, bebas pengawet dan pewarna
+                    </li>
+                    <li>
+                        <span class="tick"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        Kemasan ramah lingkungan
+                    </li>
+                    <li>
+                        <span class="tick"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        Ketahanan produk hingga 12 bulan
+                    </li>
+                    <li>
+                        <span class="tick"><svg width="10" height="8" viewBox="0 0 10 8" fill="none"><path d="M1 4l3 3 5-6" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        Cocok diseduh panas maupun es
+                    </li>
+                </ul>
+                <div class="price-row">
+                    <div class="price-meta">
+                        <div class="pl">Harga per Kotak</div>
+                        <div class="ps">Isi 10 kantung teh celup</div>
+                    </div>
+                    <div class="price-num">Rp 100.000</div>
+                </div>
+                <div class="prod-actions">
+                    <a href="#order" class="btn btn-rose">Pesan Sekarang</a>
+                    <a href="https://wa.me/628xxxxxxxxx?text=Halo%20Nagatea%2C%20saya%20ingin%20tanya%20tentang%20produk." class="btn-wa" target="_blank">
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.989.574 3.842 1.569 5.408L2.05 22l4.71-1.493A9.956 9.956 0 0 0 12 22c5.523 0 10-4.477 10-10S17.522 2 12 2zm0 18.182a8.18 8.18 0 0 1-4.42-1.293l-.317-.188-3.285 1.041 1.048-3.24-.206-.334A8.18 8.18 0 0 1 3.82 12c0-4.508 3.672-8.182 8.18-8.182 4.508 0 8.18 3.674 8.18 8.182 0 4.508-3.672 8.182-8.18 8.182z"/></svg>
+                        Tanya via WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── ORDER FORM ── -->
+<section class="order-section" id="order">
+    <div class="container">
+        <div style="margin-bottom:2.5rem;" class="reveal">
+            <span class="label">Formulir Pemesanan</span>
+            <h2 class="heading">Pesan Nagatea Sekarang</h2>
+            <p class="sub">Isi formulir di bawah — pesanan langsung diteruskan ke WhatsApp kami untuk konfirmasi segera.</p>
+        </div>
+        <div class="order-grid">
+            <!-- FORM -->
+            <div class="order-form reveal" id="orderForm">
+                <div class="form-row">
+                    <div class="field">
+                        <label for="fname">Nama Lengkap</label>
+                        <input type="text" id="fname" placeholder="Contoh: Budi Santoso" required>
+                    </div>
+                    <div class="field">
+                        <label for="fphone">Nomor WhatsApp</label>
+                        <input type="tel" id="fphone" placeholder="08xxxxxxxxxx" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="faddress">Alamat Pengiriman</label>
+                    <textarea id="faddress" rows="3" placeholder="Jl. Contoh No. 1, Kota, Provinsi" required></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="field">
+                        <label for="fqty">Jumlah Kotak</label>
+                        <select id="fqty">
+                            <option value="1">1 kotak — Rp 100.000</option>
+                            <option value="2">2 kotak — Rp 200.000</option>
+                            <option value="3">3 kotak — Rp 300.000</option>
+                            <option value="5">5 kotak — Rp 500.000 (hemat 5%)</option>
+                            <option value="10">10 kotak — Rp 950.000 (hemat 5%)</option>
+                            <option value="custom">Jumlah lain (grosir)</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="fexpedisi">Ekspedisi Pilihan</label>
+                        <select id="fexpedisi">
+                            <option value="JNE">JNE</option>
+                            <option value="J&T">J&amp;T Express</option>
+                            <option value="SiCepat">SiCepat</option>
+                            <option value="Anteraja">Anteraja</option>
+                            <option value="Pos Indonesia">Pos Indonesia</option>
+                            <option value="Diskusikan">Diskusikan dengan Kami</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="fnotes">Catatan Tambahan (opsional)</label>
+                    <input type="text" id="fnotes" placeholder="Contoh: titip salam, atau kemasan hadiah">
+                </div>
+                <button class="order-submit" onclick="kirimPesanan()">Kirim Pesanan via WhatsApp</button>
+                <p class="order-note">Dengan menekan tombol di atas, Anda akan diarahkan ke WhatsApp untuk konfirmasi pesanan.</p>
+            </div>
+
+            <!-- INFO SIDE -->
+            <div class="order-info reveal">
+                <h3>Alur Pemesanan</h3>
+                <ul class="order-steps-list">
+                    <li>
+                        <span class="os-num">1</span>
+                        <span>Isi formulir pemesanan dengan data lengkap dan klik <strong style="color:#fff;">Kirim Pesanan</strong>.</span>
+                    </li>
+                    <li>
+                        <span class="os-num">2</span>
+                        <span>Anda akan diarahkan ke WhatsApp dengan detail pesanan yang sudah terisi otomatis.</span>
+                    </li>
+                    <li>
+                        <span class="os-num">3</span>
+                        <span>Admin Nagatea mengkonfirmasi pesanan dan mengirimkan informasi pembayaran dalam 1&#215;24 jam.</span>
+                    </li>
+                    <li>
+                        <span class="os-num">4</span>
+                        <span>Lakukan pembayaran sesuai instruksi. Produk dikemas dan dikirim setelah pembayaran terkonfirmasi.</span>
+                    </li>
+                    <li>
+                        <span class="os-num">5</span>
+                        <span>Nomor resi pengiriman dikirimkan ke WhatsApp Anda untuk pelacakan paket.</span>
+                    </li>
+                </ul>
+                <div class="note-box">
+                    Pembelian minimal 5 kotak mendapat harga khusus reseller. Hubungi kami untuk informasi kemitraan dan diskon grosir lebih lanjut.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section id="testimonial">
+    <div class="container">
+        <div class="testi-header reveal">
+            <span class="label">Kata Pelanggan</span>
+            <h2 class="heading">Mereka Sudah Merasakannya</h2>
+        </div>
+        <div class="testi-grid">
+            <div class="t-card reveal">
+                <div class="t-stars">★★★★★</div>
+                <p>"Rasanya unik — ada sentuhan hangat dari kayu manis dan cengkeh. Warnanya cantik sekali, sekarang jadi minuman wajib pagi saya."</p>
+                <div class="t-author">Rahma, Jakarta</div>
+            </div>
+            <div class="t-card reveal">
+                <div class="t-stars">★★★★★</div>
+                <p>"Suka konsepnya. Limbah kulit buah naga jadi produk premium. Aroma rempahnya terasa tapi tidak menyengat, sangat pas."</p>
+                <div class="t-author">Dika, Bandung</div>
+            </div>
+            <div class="t-card reveal">
+                <div class="t-stars">★★★★★</div>
+                <p>"Dicoba versi es teh, menyegarkan sekali. Tidak ada rasa aneh — justru ada rasa manis alami dari buah naganya. Langsung reorder!"</p>
+                <div class="t-author">Siti, Surabaya</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section id="faq">
+    <div class="container">
+        <div class="faq-wrap">
+            <div class="faq-header reveal">
+                <span class="label">Pertanyaan Umum</span>
+                <h2 class="heading">FAQ</h2>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-q" aria-expanded="false">Berapa lama ketahanan produk Nagatea?<span class="faq-icon">+</span></button>
+                <div class="faq-a"><div class="faq-a-inner">Nagatea memiliki ketahanan hingga 12 bulan dalam kemasan tertutup yang disimpan di tempat sejuk dan kering, jauh dari paparan sinar matahari langsung.</div></div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-q" aria-expanded="false">Apakah Nagatea mengandung kafein?<span class="faq-icon">+</span></button>
+                <div class="faq-a"><div class="faq-a-inner">Nagatea berbasis kulit buah naga dan rempah, bukan daun teh konvensional, sehingga kadar kafeinnya sangat rendah. Aman dikonsumsi kapan saja, termasuk malam hari.</div></div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-q" aria-expanded="false">Apakah aman untuk penderita diabetes?<span class="faq-icon">+</span></button>
+                <div class="faq-a"><div class="faq-a-inner">Nagatea tidak mengandung gula tambahan. Kandungan alami buah naga bahkan dipercaya membantu menjaga kestabilan kadar gula darah. Namun, konsultasikan dengan dokter untuk kondisi medis spesifik.</div></div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-q" aria-expanded="false">Apakah ada diskon untuk pembelian grosir?<span class="faq-icon">+</span></button>
+                <div class="faq-a"><div class="faq-a-inner">Ya. Pembelian minimal 5 kotak mendapat harga khusus. Hubungi kami melalui WhatsApp untuk informasi paket reseller dan harga grosir.</div></div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-q" aria-expanded="false">Pengiriman ke wilayah mana saja?<span class="faq-icon">+</span></button>
+                <div class="faq-a"><div class="faq-a-inner">Kami melayani pengiriman ke seluruh Indonesia melalui berbagai ekspedisi terpercaya. Biaya dan estimasi pengiriman dikonfirmasi saat proses pemesanan.</div></div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-q" aria-expanded="false">Bagaimana metode pembayarannya?<span class="faq-icon">+</span></button>
+                <div class="faq-a"><div class="faq-a-inner">Kami menerima transfer bank (BCA, BRI, BNI, Mandiri), dompet digital (GoPay, OVO, DANA), dan COD untuk wilayah tertentu. Detail disampaikan melalui WhatsApp setelah konfirmasi pesanan.</div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-section" id="contact">
+    <div class="container" style="text-align:center;">
+        <span class="label" style="color:var(--gold);">Siap Mencoba?</span>
+        <h2 class="heading" style="color:var(--white); margin-bottom:0.75rem;">Pesan Nagatea Hari Ini</h2>
+        <p>Isi formulir pemesanan atau hubungi kami langsung. Tim kami siap membalas dalam 1&times;24 jam.</p>
+        <div class="cta-btns">
+            <a href="#order" class="btn-cream">Isi Formulir Pemesanan</a>
+            <a href="https://wa.me/628xxxxxxxxx" class="btn-wa" target="_blank">
+                <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2C6.477 2 2 6.477 2 12c0 1.989.574 3.842 1.569 5.408L2.05 22l4.71-1.493A9.956 9.956 0 0 0 12 22c5.523 0 10-4.477 10-10S17.522 2 12 2zm0 18.182a8.18 8.18 0 0 1-4.42-1.293l-.317-.188-3.285 1.041 1.048-3.24-.206-.334A8.18 8.18 0 0 1 3.82 12c0-4.508 3.672-8.182 8.18-8.182 4.508 0 8.18 3.674 8.18 8.182 0 4.508-3.672 8.182-8.18 8.182z"/></svg>
+                Chat WhatsApp
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+    <div class="footer-grid container">
+        <div class="f-brand">
+            <div class="logo">Nagatea</div>
+            <p>Premium dragon fruit tea. Alami, berkelanjutan, dan menyehatkan.</p>
+        </div>
+        <div class="f-col">
+            <h4>Menu</h4>
+            <ul>
+                <li><a href="#story">Tentang Kami</a></li>
+                <li><a href="#benefits">Manfaat</a></li>
+                <li><a href="#brew">Cara Seduh</a></li>
+                <li><a href="#product">Produk</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </div>
+        <div class="f-col">
+            <h4>Hubungi Kami</h4>
+            <ul>
+                <li><a href="https://wa.me/628xxxxxxxxx" target="_blank">WhatsApp</a></li>
+                <li><a href="mailto:contact@nagatea.com">contact@nagatea.com</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom container">&copy; 2026 Nagatea. All rights reserved.</div>
+</footer>
 
 <script>
-  // 1. FUNGSI NAVIGASI PINDAH HALAMAN
-  function showPage(pageId) {
-    const pages = document.querySelectorAll('.page');
-    pages.forEach(page => page.classList.remove('active'));
+    // ── HAMBURGER
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
 
-    const targetPage = document.getElementById('page-' + pageId);
-    if (targetPage) targetPage.classList.add('active');
-
-    const navBtns = document.querySelectorAll('.nav-btn');
-    navBtns.forEach(btn => btn.classList.remove('active'));
-    
-    const activeBtn = document.getElementById('nb-' + pageId);
-    if (activeBtn) activeBtn.classList.add('active');
-
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    triggerReveal();
-  }
-
-  // 2. LOGIKA HAMBURGER MENU (RESPONSIVE)
-  const mobileBtn = document.getElementById('mobileMenuBtn');
-  const navLinks = document.getElementById('navLinks');
-
-  mobileBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-    // Ubah icon dari garis tiga menjadi silang 'X' saat dibuka
-    mobileBtn.innerHTML = navLinks.classList.contains('active') ? '✕' : '☰';
-  });
-
-  // Tutup menu secara otomatis jika salah satu link diklik di HP
-  document.querySelectorAll('.nav-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      if (window.innerWidth <= 768) {
-        navLinks.classList.remove('active');
-        mobileBtn.innerHTML = '☰';
-      }
-    });
-  });
-
-  // Pastikan menu reset saat layar di-resize dari HP ke Laptop
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) {
-      navLinks.classList.remove('active');
-      mobileBtn.innerHTML = '☰';
+    function toggleMenu(open) {
+        hamburger.classList.toggle('open', open);
+        mobileMenu.classList.toggle('open', open);
+        hamburger.setAttribute('aria-expanded', String(open));
+        document.body.style.overflow = open ? 'hidden' : '';
     }
-  });
 
-  // 3. EFEK SCROLL & PROGRESS BAR
-  window.addEventListener('scroll', () => {
-    const pgbar = document.getElementById('pgbar');
-    const btt = document.getElementById('btt');
-    
-    let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    let scrolled = (winScroll / height) * 100;
-    
-    if(pgbar) pgbar.style.width = scrolled + "%";
-    if(btt) {
-      if (winScroll > 300) btt.classList.add('show');
-      else btt.classList.remove('show');
-    }
-  });
-
-  // 4. ANIMASI REVEAL
-  function triggerReveal() {
-    const reveals = document.querySelectorAll('.reveal, .reveal-l, .reveal-r, .reveal-s');
-    const windowHeight = window.innerHeight;
-    
-    reveals.forEach(reveal => {
-      const elementTop = reveal.getBoundingClientRect().top;
-      if (elementTop < windowHeight - 50) {
-        reveal.classList.add('visible');
-      }
+    hamburger.addEventListener('click', () => {
+        toggleMenu(!mobileMenu.classList.contains('open'));
     });
-  }
-  window.addEventListener('scroll', triggerReveal);
-  window.addEventListener('load', triggerReveal);
+
+    document.querySelectorAll('.m-link').forEach(a => {
+        a.addEventListener('click', () => toggleMenu(false));
+    });
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') toggleMenu(false);
+    });
+
+    // ── NAVBAR SHADOW ON SCROLL
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        navbar.classList.toggle('scrolled', window.scrollY > 30);
+    }, { passive: true });
+
+    // ── SCROLL REVEAL
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => entry.target.classList.add('visible'), i * 70);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    revealEls.forEach(el => observer.observe(el));
+
+    // ── FAQ ACCORDION
+    document.querySelectorAll('.faq-item').forEach(item => {
+        item.querySelector('.faq-q').addEventListener('click', () => {
+            const isOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item').forEach(i => {
+                i.classList.remove('open');
+                i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+            });
+            if (!isOpen) {
+                item.classList.add('open');
+                item.querySelector('.faq-q').setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
+
+    // ── ACTIVE NAV LINK
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(sec => {
+            if (window.scrollY >= sec.offsetTop - 100) current = sec.id;
+        });
+        navLinks.forEach(link => {
+            link.style.color = '';
+            if (link.getAttribute('href') === '#' + current) link.style.color = 'var(--rose)';
+        });
+    }, { passive: true });
+
+    // ── ORDER FORM -> WHATSAPP
+    function kirimPesanan() {
+        const nama     = document.getElementById('fname').value.trim();
+        const telp     = document.getElementById('fphone').value.trim();
+        const alamat   = document.getElementById('faddress').value.trim();
+        const qty      = document.getElementById('fqty');
+        const exp      = document.getElementById('fexpedisi');
+        const catatan  = document.getElementById('fnotes').value.trim();
+
+        if (!nama || !telp || !alamat) {
+            alert('Mohon lengkapi nama, nomor WhatsApp, dan alamat pengiriman terlebih dahulu.');
+            return;
+        }
+
+        const qtyText = qty.options[qty.selectedIndex].text;
+        const expVal  = exp.value;
+
+        let pesan = `Halo Nagatea, saya ingin memesan:\n\n`;
+        pesan += `Nama: ${nama}\n`;
+        pesan += `No. WA: ${telp}\n`;
+        pesan += `Alamat: ${alamat}\n`;
+        pesan += `Pesanan: ${qtyText}\n`;
+        pesan += `Ekspedisi: ${expVal}\n`;
+        if (catatan) pesan += `Catatan: ${catatan}\n`;
+
+        // Ganti nomor WA di sini setelah deployment
+        const nomorWA = '628xxxxxxxxx';
+        const url = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
+        window.open(url, '_blank');
+    }
 </script>
 </body>
 </html>
